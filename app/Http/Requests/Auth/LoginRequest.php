@@ -34,6 +34,17 @@ class LoginRequest extends FormRequest
         ];
     }
 
+    // public function messages()
+    // {
+    //     return [
+    //         // 'email.required' => "必须提供邮箱",
+    //         'email.string' => "邮箱只能是字符",
+    //         'email.email' => "错误的邮箱格式",
+    //         // 'password.required' => "缺少密码",
+    //         // 'password.string' => ['required', 'string'],
+    //     ];
+    // }
+
     /**
      * Attempt to authenticate the request's credentials.
      *
@@ -76,7 +87,7 @@ class LoginRequest extends FormRequest
         throw ValidationException::withMessages([
             'email' => trans('auth.throttle', [
                 'seconds' => $seconds,
-                'minutes' => ceil($seconds / 60),
+                // 'minutes' => ceil($seconds / 60),
             ]),
         ]);
     }
