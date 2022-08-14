@@ -21,7 +21,14 @@ import { loadLanguageAsync } from 'laravel-vue-i18n';
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
                         <Link href="/dashboard">go3ksjdf to dashboard</Link>
-                          <button @click="loadLanguageAsync('zh_TW')">Change to zh_TW Language</button>
+            <hr>
+
+                          <button @click="loadLanguageAsync('zh_CN')">Change to zh_CN Language</button>
+            <hr>
+                          <button @click="loadLanguageAsync('en')">Change to en Language</button>
+            <hr>
+
+
                           <span>haha{{$t('auth.failed')}}</span>
                     </div>
                 </div>

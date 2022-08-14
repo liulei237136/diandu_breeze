@@ -19,7 +19,8 @@ createServer((page) =>
                 .use(plugin)
                 .use(i18nVue, {
                     resolve: lang => {
-                        return require(`../lang/${lang}/json.json`).default;
+                        const langs = import.meta.globEager('../../lang/*.json');
+                        return langs[`../../lang/${lang}.json`].default;
                     },
                 })
                 .use(ZiggyVue, {
